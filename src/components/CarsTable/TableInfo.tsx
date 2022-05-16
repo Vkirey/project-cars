@@ -16,6 +16,6 @@ export const TableInfo: React.FC = () => {
 
     return <TableInfoContainer>
         <h2>Available cars</h2>
-        <PaginationInfoSpan>Showing {carsToShow.length} of {total} results</PaginationInfoSpan>
+        <PaginationInfoSpan data-testid="table-info-text">Showing {carsToShow.length} of {total} results</PaginationInfoSpan>
     </TableInfoContainer>
 }

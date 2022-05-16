@@ -52,10 +52,10 @@ export const CarTableRow: React.FC<CarTableRowProps> = ({ rowData }) => {
         <CarTableRowImage src={rowData.pictureUrl} />
       </CarTableRowImageContainer>
       <CarTableDataContainer>
-        <CarTableName>
+        <CarTableName data-testid="car-name">
           {rowData.manufacturerName} {rowData.modelName}
         </CarTableName>
-        <div>
+        <div data-testid="car-details">
           Stock # {rowData.stockNumber} - {rowData.mileage.number}{" "}
           {rowData.mileage.unit} - {rowData.fuelType} - {capitalize(rowData.color)}{" "}
         </div>
@@ -63,12 +63,13 @@ export const CarTableRow: React.FC<CarTableRowProps> = ({ rowData }) => {
           underline="hover"
           width="fit-content"
           component={RouterLink}
+          data-testid="car-link"
           to={"/car/" + rowData.stockNumber}
         >
           View details
         </Link>
       </CarTableDataContainer>
-      <Fab onClick={() => handleToggleFavourite(rowData.stockNumber.toString())}>
+      <Fab onClick={() => handleToggleFavourite(rowData.stockNumber.toString())} data-testid="car-favour-btn">
         <FavoriteIcon color={favourites.includes(rowData.stockNumber.toString()) ? 'primary' : undefined} />
       </Fab>
     </CarTableRowContainer>
