@@ -68,6 +68,8 @@ export const CarTableProvider: React.FC<React.PropsWithChildren<{}>> = ({
     }
 
     loading.current = true
+
+    setPage(1)
     getCarsData(1, manufacturer, color)
     .then((data) => {
       setCarsToShow(data.cars)
@@ -83,6 +85,7 @@ export const CarTableProvider: React.FC<React.PropsWithChildren<{}>> = ({
     }
 
     loading.current = true
+    
     getCarsData(page, manufacturer, color)
     .then((data) => {
       setCarsToShow(data.cars)
