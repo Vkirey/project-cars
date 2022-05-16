@@ -15,3 +15,15 @@ Use create-react-app to setup app
 Use best practices with hooks
 Add tests (with react-testing-library)
 Bonus Static type checking (TS or Flow)
+
+## Run
+
+```
+yarn && yarn start
+```
+
+or 
+
+```
+npm i && npm run start
+```
